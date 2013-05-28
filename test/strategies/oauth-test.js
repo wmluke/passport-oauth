@@ -1403,7 +1403,7 @@ vows.describe('OAuthStrategy').addBatch({
         assert.isNull(err);
       },
       'should redirect to user authorization URL' : function(err, req) {
-        assert.equal(req.redirectURL, 'https://www.example.com/oauth/authorize?oauth_token=token');
+        assert.equal(req.redirectURL, 'https://www.example.com/oauth/authorize?oauth_token=token&oauth_callback=https%3A%2F%2Fwww.example.net%2Fauth%2Fexample%2Fcallback');
       },
       'should store token and token secret in session' : function(err, req) {
         assert.equal(req.session['oauth']['oauth_token'], 'token');
@@ -1471,7 +1471,7 @@ vows.describe('OAuthStrategy').addBatch({
         assert.isNull(err);
       },
       'should redirect to user authorization URL' : function(err, req) {
-        assert.equal(req.redirectURL, 'https://www.example.com/oauth/authorize?oauth_token=token');
+        assert.equal(req.redirectURL, 'https://www.example.com/oauth/authorize?oauth_token=token&oauth_callback=https%3A%2F%2Fwww.example.net%2Fauth%2Fexample%2Fcb');
       },
       'should store token and token secret in session' : function(err, req) {
         assert.equal(req.session['oauth']['oauth_token'], 'token');
@@ -1533,7 +1533,7 @@ vows.describe('OAuthStrategy').addBatch({
         assert.isNull(err);
       },
       'should redirect to user authorization URL' : function(err, req) {
-        assert.equal(req.redirectURL, 'https://www.example.com/oauth/authorize?oauth_token=token');
+        assert.equal(req.redirectURL, 'https://www.example.com/oauth/authorize?oauth_token=token&oauth_callback=https%3A%2F%2Fwww.example.net%2Fauth%2Fexample%2Fother-callback');
       },
       'should store token and token secret in session' : function(err, req) {
         assert.equal(req.session['oauth']['oauth_token'], 'token');
@@ -1601,7 +1601,7 @@ vows.describe('OAuthStrategy').addBatch({
         assert.isNull(err);
       },
       'should redirect to user authorization URL' : function(err, req) {
-        assert.equal(req.redirectURL, 'https://www.example.com/oauth/authorize?oauth_token=token');
+        assert.equal(req.redirectURL, 'https://www.example.com/oauth/authorize?oauth_token=token&oauth_callback=https%3A%2F%2Fwww.example.net%2Fauth%2Fexample%2Fanother-callback');
       },
       'should store token and token secret in session' : function(err, req) {
         assert.equal(req.session['oauth']['oauth_token'], 'token');
